@@ -1,0 +1,21 @@
+
+:root {
+  --main-color: #FE5454;
+}
+
+.navbar {
+  padding: 1rem;
+  background-color: var(--main-color);
+}
+
+.navbar a{
+  color: white;
+}
+
+.navbar button {
+  color: white;
+}
+
+.navbar a, i {
+  font-size: 2rem;
+}
