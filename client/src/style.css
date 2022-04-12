@@ -1,14 +1,28 @@
+/* GENERAL */
 
 :root {
   --main-color: #FE5454;
 }
 
-.navbar {
-  padding: 1rem;
-  background-color: var(--main-color);
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-.navbar a{
+/* END OF GENERAL */
+
+/* NAVBAR */
+
+.navbar {
+  background-color: var(--main-color);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  height: 80px;
+  width: 60px;
+}
+
+.navbar a {
   color: white;
 }
 
@@ -19,3 +33,78 @@
 .navbar a, i {
   font-size: 2rem;
 }
+
+/* END OF NAVBAR */
+
+/* MAIN PAGE */
+
+/* add quote button */
+.add-quote {
+  background-color: var(--main-color);
+  border:none;
+  border-radius: 50%;
+  bottom: 2rem;
+  color: white;
+  left: 2rem;
+  padding: 1.5rem;
+  position: fixed;
+}
+
+/* END OF MAIN PAGE */
+
+/* ADD QUOTE FORM MODAL */
+
+.add-quote-form-wrapper {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: 0.3s linear all;
+  transform: scale(0);
+  visibility: hidden;
+  width: 100%;
+  z-index: -1;
+}
+
+/* class applied to the add quote form wrapper when the open button is pressed */
+.show {
+  transform: scale(1);
+  visibility: visible;
+  z-index: 1;
+}
+
+.add-quote-form-container {
+  background-color: white;
+}
+
+/* END OF ADD QUOTE FORM MODAL */
+
+
+/* MAIN */
+
+/* quotes section */
+
+.main-quotes-section {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* quote container */
+
+.quote-container {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 0 2rem;
+  transition: 0.3s linear all;
+}
+
+.quote-container:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/* END OF MAIN */

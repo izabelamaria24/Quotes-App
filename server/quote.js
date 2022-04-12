@@ -1,9 +1,11 @@
 import mongoose from 'mongoose'
+import User from './user.js'
+import { userSchema } from './user.js'
 
 const quoteSchema = new mongoose.Schema({
-  userId: String,
   author: String,
-  content: String
+  content: String,
+  username: String
 })
 
 const Quote = new mongoose.model("Quote", quoteSchema)

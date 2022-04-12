@@ -1,8 +1,9 @@
 import mongoose from 'mongoose'
 
-const userSchema = new mongoose.Schema({
+export const userSchema = new mongoose.Schema({
   username: String,
-  password: String
+  password: String,
+  profilePicture: String
 })
 
 const User = new mongoose.model("User", userSchema)
