@@ -26,11 +26,12 @@ const Navbar = ({userId}) => {
             </li>
           </ul>
           <form className="d-flex">
-            <input onChange={(e) => setSearch(e)} className="form-control me-2" type="search" placeholder="Search quote" aria-label="Search"/>
+            <input onChange={(e) => setSearch(e)} className="search-input form-control me-2" type="search" placeholder="&#xf002;   Search quote" aria-label="Search"/>
           </form>
         </div>
       </div>
     </nav>
+    <div className="wave-1"></div>
 
   </>
 }

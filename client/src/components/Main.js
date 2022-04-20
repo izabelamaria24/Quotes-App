@@ -3,17 +3,17 @@ import axios from 'axios'
 
 import { useGlobalContext } from '../context'
 import { fetchData } from '../actions'
+import speech from '../images/speech.png'
+
 import Navbar from './Navbar'
 
 const Main = () => {
   const [data, setData] = useState({user: {}, quotes: [], isFetching: false})
-  const { state: { user, quotes, search }, getCurrentUser, openAddQuoteForm, fetchQuotes } = useGlobalContext()
+  const { state: { search }, openAddQuoteForm } = useGlobalContext()
 
   useEffect(() => {
     fetchData(data, setData)
   }, [])
-
-  console.log(data.quotes)
 
   return <>
     <Navbar userId={data.user._id} />
@@ -28,12 +28,12 @@ const Main = () => {
           quote.username.toLowerCase().includes(search.toLowerCase())
         }).map((quote, id) => {
           return <article className="quote-container" key={id}>
-            <i className="fas fa-solid fa-quote-right"></i>
+            <img className="quote-img" src={speech}></img>
             <div className="quote-content">{quote.content}</div>
             <div className="quote-author">- {quote.author ? quote.author : "John Doe"}</div>
-            <div className="quote-user"></div>
+            <div className="quote-user"> @{quote.username}</div>
           </article>
-      })}
+        })}
     </section>
   </>
 }

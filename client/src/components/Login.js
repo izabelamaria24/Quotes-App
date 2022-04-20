@@ -15,24 +15,23 @@ const Login = () => {
     setReady(true)
   }
 
-  console.log(password);
-
   return <>
     {ready && <Navigate to="/firstpage" replace={true} />}
-    <section className="flex-center login-register">
+    <section className="login-register">
       <section className="flex-center full-w-h login-register-img"><img src={loginsvg}></img></section>
       <section className="flex-center full-w-h login-register-form">
-        <label for="inp" className="inp">
+        <h1 className="welcome-text">Welcome back!</h1>
+        <label htmlFor="inp" className="inp">
           <input type="text" id="inp" placeholder="&nbsp;" onChange={(e) => setUsername(e.target.value)} />
           <span className="label">Username</span>
           <span className="focus-bg"></span>
         </label>
-        <label for="inp" className="inp">
+        <label htmlFor="inp" className="inp">
           <input type="text" id="inp" placeholder="&nbsp;" onChange={(e) => setPassword(e.target.value)} />
           <span className="label">Password</span>
           <span className="focus-bg"></span>
         </label>
-        <button className="btn btn-dark" onClick={handleClick}>Login</button>
+        <button className="btn btn-outline-light" onClick={handleClick}>Login</button>
       </section>
     </section>
   </>

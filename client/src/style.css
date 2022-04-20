@@ -1,5 +1,12 @@
 /* GENERAL */
 
+.wave-1 {
+  background-image: url("./images/wave-haikei.svg");
+  height: 150px;
+  width: auto;
+  background-repeat: no-repeat;
+}
+
 :root {
   --cardinal-pink: #800360;
   --shiraz: #B7003F;
@@ -118,8 +125,8 @@ button {
 /* NAVBAR */
 
 .navbar {
-  background-color: var(--main-color);
-  padding: 1rem 2rem;
+  background-color: var(--shiraz);
+  padding: 1rem 7rem;
 }
 
 .navbar-brand {
@@ -137,6 +144,18 @@ button {
 
 .navbar a, i {
   font-size: 2rem;
+}
+
+.search-input {
+  font-family: 'Quicksand', 'FontAwesome';
+  width: 250px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.search-input::placeholder {
+  color: var(--shiraz);
+  font-weight: 500;
 }
 
 /* END OF NAVBAR */
@@ -192,10 +211,10 @@ button {
 /* quotes section */
 
 .main-quotes-section {
-  padding: 5rem;
+  padding: 0 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-    background-color: #f5f5f5;
+  background-color: white;
 }
 
 /* quote container */
@@ -203,7 +222,7 @@ button {
 .quote-container {
   background-color: white;
   padding: 8%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 3rem;
   transition: 0.3s linear all;
   position: relative;
@@ -218,19 +237,28 @@ button {
 }
 
 .quote-container .quote-author {
-  color: gray;
+  color: #585858;
   font-size: 1rem;
   font-weight: 500;
   position: absolute;
   bottom: 10%;
 }
 
-.quote-container i {
+.quote-container .quote-user {
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.quote-container .quote-img {
   position: absolute;
   top: -15px;
-  left: -15px;
-  font-size: 3.5rem;
+  right: -15px;
   color: var(--shiraz);
+  width: 75px;
+  height: 75px;
 }
 
 .quote-container:hover {
@@ -315,11 +343,32 @@ button {
 
 .login-register {
   height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
 }
 
 .login-register-form {
   background-color: var(--blaze-orange);
   flex-direction: column;
+  position: relative;
+}
+
+.login-register-form .welcome-text {
+  position: absolute;
+  top: 10%;
+  color: white;
+}
+
+.login-register-form label {
+  margin: 0.5rem;
+  min-width: 300px;
+}
+
+.login-register-form button {
+  margin-top: 2rem;
+  padding: 0.7rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 
