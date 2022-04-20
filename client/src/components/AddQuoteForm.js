@@ -7,46 +7,12 @@ import { fetchUser } from '../actions'
 
 const AddQuoteForm = () => {
   const { state: { isAddQuoteFormOpen }, closeAddQuoteForm } = useGlobalContext()
-  const [quoteContent, setQuoteContent] = useState({content: "", author: "", username: ""})
-
-  // useEffect(() => {
-  //   const fetchUser = async () =>
-  //   {
-  //   	try
-  //   	{
-  //   		setQuoteContent(
-  //   		{
-  //   			...quoteContent,
-  //   		})
-  //   		const res = await axios(
-  //   		{
-  //   			method: "GET",
-  //   			withCredentials: true,
-  //   			url: "http://localhost:5000/currentUser"
-  //   		})
-  //   		setQuoteContent(
-  //   		{
-  //   			username: res.data.username
-  //   		})
-  //   	}
-  //   	catch (err)
-  //   	{
-  //   		console.log(err)
-  //   		setQuoteContent(
-  //   		{
-  //   			...quoteContent
-  //   		})
-  //   	}
-  //   }
-  //
-  //   fetchUser()
-  // }, [quoteContent.username])
+  const [quoteContent, setQuoteContent] = useState({content: "", author: "", user: ""})
 
   const handleSubmit = () => {
     postQuote(quoteContent)
     closeAddQuoteForm()
   }
-
 
   return <>
     <section className={`${isAddQuoteFormOpen ? "show add-quote-form-wrapper" : "add-quote-form-wrapper"}`}>

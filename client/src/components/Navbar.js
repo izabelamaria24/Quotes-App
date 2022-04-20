@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 
 import navbrand from '../images/nav-brand.png'
 
+import { useGlobalContext } from '../context'
+
 const Navbar = ({userId}) => {
+
+  const { setSearch } = useGlobalContext()
 
   return <>
     <nav className="nav navbar navbar-expand-lg">
@@ -22,7 +26,7 @@ const Navbar = ({userId}) => {
             </li>
           </ul>
           <form className="d-flex">
-            <input className="form-control me-2" type="search" placeholder="Search quote" aria-label="Search"/>
+            <input onChange={(e) => setSearch(e)} className="form-control me-2" type="search" placeholder="Search quote" aria-label="Search"/>
           </form>
         </div>
       </div>

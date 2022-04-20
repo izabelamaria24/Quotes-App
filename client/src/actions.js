@@ -51,7 +51,6 @@ export const fetchData = async (data, setData) =>
 			withCredentials: true,
 			url: "http://localhost:5000/quotes"
 		})
-
 		setData(
 		{
 			quotes: [...res2.data],

@@ -60,6 +60,7 @@ export const register = (req, res) =>
 
 export const getCurrentUser = async (req, res) =>
 {
+	console.log(req.user)
 	res.json(req.user)
 }
 
@@ -83,7 +84,7 @@ export const postQuote = async (req, res) => {
 	const newQuote = new Quote({
 		content: req.body.content,
 		author: req.body.author,
-		username: req.body.username
+		username: req.user.username
 	})
 
 	try {

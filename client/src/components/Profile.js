@@ -11,17 +11,7 @@ const Profile = () => {
 
   return <>
     <section className="container">
-      <section className="row">
-        <div className="col-6">
-          <img src={data.user.profilePicture} alt="profile-picture" />
-          <input type="file" name="profilePicture" accept="image/*" onChange = {(e) => setData({...data, user: {...data.user, profilePicture: e.target.value}})}/>
-          <button type="submit" onClick={() => changeProfilePicture(data.user.profilePicture)}>change profile picture</button>
-          {data.user.username}
-        </div>
-        <div className="col-6">
-
-        </div>
-      </section>
+      {data.user.username}
     </section>
   </>
 }

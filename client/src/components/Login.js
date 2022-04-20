@@ -1,18 +1,40 @@
 import React, { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import axios from 'axios'
 
 import { login } from '../actions'
+import loginsvg from '../images/Login.gif'
 
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [ready, setReady] = useState(false)
+
+  const handleClick = () => {
+    login(username, password)
+    setReady(true)
+  }
+
+  console.log(password);
 
   return <>
-    <div>
-      <input placeholder="username" onChange={(e) => setUsername(e.target.value)}></input>
-      <input placeholder="password" onChange={(e) => setPassword(e.target.value)}></input>
-      <button onClick={() => login(username, password)}>Login</button>
-    </div>
+    {ready && <Navigate to="/firstpage" replace={true} />}
+    <section className="flex-center login-register">
+      <section className="flex-center full-w-h login-register-img"><img src={loginsvg}></img></section>
+      <section className="flex-center full-w-h login-register-form">
+        <label for="inp" className="inp">
+          <input type="text" id="inp" placeholder="&nbsp;" onChange={(e) => setUsername(e.target.value)} />
+          <span className="label">Username</span>
+          <span className="focus-bg"></span>
+        </label>
+        <label for="inp" className="inp">
+          <input type="text" id="inp" placeholder="&nbsp;" onChange={(e) => setPassword(e.target.value)} />
+          <span className="label">Password</span>
+          <span className="focus-bg"></span>
+        </label>
+        <button className="btn btn-dark" onClick={handleClick}>Login</button>
+      </section>
+    </section>
   </>
 }
 

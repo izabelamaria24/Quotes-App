@@ -11,6 +11,4 @@ router.post("/postQuote", postQuote)
 router.get("/currentUser", getCurrentUser)
 router.get("/quotes", getQuotes)
 
-router.put("/currentUser", changeProfilePicture)
-
 export default router

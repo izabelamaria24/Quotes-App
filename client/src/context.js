@@ -5,9 +5,8 @@ const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
   const initialState = {
-    // user: {username: '', profilePicture: '', _id: ''},
     isAddQuoteFormOpen: false,
-    quotes: []
+    search: ''
   }
 
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -28,13 +27,18 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: 'FETCH_QUOTES', payload: quotes })
   }
 
+  const setSearch = (e) => {
+    dispatch({ type: 'SET_SEARCH', payload: e })
+  }
+
   return (
     <AppContext.Provider
       value={{
         state,
         openAddQuoteForm,
         closeAddQuoteForm,
-        getCurrentUser
+        getCurrentUser,
+        setSearch
       }}
     >
       {children}
