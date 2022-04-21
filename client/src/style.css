@@ -1,16 +1,9 @@
 /* GENERAL */
 
-.wave-1 {
-  background-image: url("./images/wave-haikei.svg");
-  height: 150px;
-  width: auto;
-  background-repeat: no-repeat;
-}
-
 :root {
+  --blaze-orange: #fa5d0f;
   --cardinal-pink: #800360;
   --shiraz: #B7003F;
-  --blaze-orange: #fa5d0f;
 }
 
 body {
@@ -23,27 +16,34 @@ button {
   font-family: 'Quicksand', sans-serif;
 }
 
+/* wave svg class */
+.wave-1 {
+  background-image: url("./images/wave-haikei.svg");
+  background-repeat: no-repeat;
+  height: 150px;
+  width: auto;
+}
 
 /* GENERAL CUSTOM */
 
 /* flex centered */
 .flex-center {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 /* full width and height */
 .full-w-h {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 /* input style */
 .inp {
-  position: relative;
   border-radius: 3px;
   overflow: hidden;
+  position: relative;
 }
 
 .inp .label {
@@ -148,9 +148,9 @@ button {
 
 .search-input {
   font-family: 'Quicksand', 'FontAwesome';
-  width: 250px;
   font-size: 1.1rem;
   font-weight: 600;
+  width: 250px;
 }
 
 .search-input::placeholder {
@@ -201,6 +201,105 @@ button {
 
 .add-quote-form-container {
   background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  height: 95%;
+  position: relative;
+  width: 95%;
+}
+
+/* close modal button */
+.add-quote-form-container .close-add-quote-form {
+  background-color: transparent;
+  border: none;
+  left: 2rem;
+  position: absolute;
+  top: 2rem;
+}
+
+.close-add-quote-form i {
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.close-add-quote-form i:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* modal quote container */
+.add-quote-form-container .quote-container {
+  margin-bottom: 0.8rem;
+  width: 80%;
+}
+
+/* modal form */
+.add-quote-form-container .form {
+  width: 100%;
+}
+
+.add-quote-form-container .form-control {
+  border: none;
+  width: 80%;
+}
+
+.add-quote-form-container .form textarea, .add-quote-form-container .form input {
+  border-radius: 5px;
+  color: var(--shiraz);
+  font-weight: 600;
+  transition: 0.3s linear;
+}
+
+.add-quote-form-container .form textarea {
+  border: 2px solid var(--shiraz);
+  font-size: 1.2rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.add-quote-form-container .form textarea::placeholder, .add-quote-form-container .form input::placeholder {
+  color: var(--shiraz);
+  font-weight: 600;
+}
+
+.add-quote-form-container .form textarea::placeholder {
+  font-size: 1.2rem;
+}
+
+.add-quote-form-container .form textarea:focus, .add-quote-form-container .form input:focus {
+  background-color: #ebd6cc;
+  border-color: var(--shiraz);
+  outline: none !important;
+}
+
+.add-quote-form-container .form input {
+  border: 1.5px solid var(--shiraz);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  width: 70%;
+}
+
+.add-quote-form-container .form input::placeholder {
+  font-size: 1rem;
+}
+
+.add-quote-form-container .post-quote-btn {
+  background-color: var(--shiraz);
+  border: none;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+}
+
+.post-quote-btn:hover {
+  background-color: var(--blaze-orange);
+}
+
+.add-quote-form-container blockquote {
+  margin: 0;
+  padding: 3%;
 }
 
 /* END OF ADD QUOTE FORM MODAL */
@@ -211,23 +310,23 @@ button {
 /* quotes section */
 
 .main-quotes-section {
-  padding: 0 5rem;
+  background-color: white;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  background-color: white;
+  padding: 0 5rem;
 }
 
 /* quote container */
 
 .quote-container {
   background-color: white;
-  padding: 8%;
+  border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 3rem;
-  transition: 0.3s linear all;
-  position: relative;
   min-height: 250px;
-  border-radius: 25px;
+  padding: 8%;
+  position: relative;
+  transition: 0.3s linear all;
 }
 
 .quote-container .quote-content {
@@ -237,33 +336,33 @@ button {
 }
 
 .quote-container .quote-author {
+  bottom: 10%;
   color: #585858;
   font-size: 1rem;
   font-weight: 500;
   position: absolute;
-  bottom: 10%;
 }
 
 .quote-container .quote-user {
-  position: absolute;
-  top: 7%;
-  right: 10%;
-  font-size: 0.8rem;
   color: gray;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 10%;
+  top: 7%;
 }
 
 .quote-container .quote-img {
-  position: absolute;
-  top: -15px;
-  right: -15px;
   color: var(--shiraz);
-  width: 75px;
   height: 75px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  width: 75px;
 }
 
 .quote-container:hover {
-  transform: scale(1.05);
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 /* END OF MAIN */
@@ -271,32 +370,32 @@ button {
 /* FIRST PAGE */
 
 .firstpage {
-  width: auto;
-  height: 100vh;
   background: var(--cardinal-pink);
   background: linear-gradient(45deg, var(--cardinal-pink) 0%, var(--blaze-orange) 87%);
   color: white;
+  height: 100vh;
+  width: auto;
 }
 
-.firstpage > nav {
+.firstpage nav {
+  margin-top: 1.5rem;
   position: absolute;
-  top: 0;
   right: 15%;
   text-align: center;
-  margin-top: 1.5rem;
+  top: 0;
   z-index: 2;
 }
 
-.firstpage > nav > button {
+.firstpage nav button {
   background-color: transparent;
   font-size: 1.5rem;
-  padding: 0.8rem 2rem;
   margin: 0 1rem;
+  padding: 0.8rem 2rem;
 }
 
-.firstpage > nav > button > a {
-  text-decoration: none;
+.firstpage nav button a {
   color: white;
+  text-decoration: none;
 }
 
 .firstpage-login {
@@ -312,39 +411,38 @@ button {
   text-align: center;
 }
 
-.carousel-item > div {
-  padding: 0 15%;
-  font-family: 'Indie Flower', cursive;
-  position: relative;
-  height: 100vh;
+.carousel-item div {
   display: flex;
   flex-direction: column;
+  font-family: 'Indie Flower', cursive;
+  height: 100vh;
   justify-content: center;
+  padding: 0 15%;
+  position: relative;
 }
 
-.carousel-item > div > h1 {
+.carousel-item div h1 {
   font-size: 3.5rem;
   z-index: 1;
 }
 
-.carousel-item > div > i {
+.carousel-item div i {
+  font-size: 5rem;
+  left: 20%;
+  opacity: 0.2;
   position: absolute;
   top: 35%;
-  left: 20%;
-  font-size: 5rem;
-  opacity: 0.2;
 }
 
 /* END OF FIRST PAGE */
 
 
-
 /* LOGIN-REGISTER PAGES */
 
 .login-register {
-  height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 50%);
+  height: 100vh;
 }
 
 .login-register-form {
@@ -354,9 +452,9 @@ button {
 }
 
 .login-register-form .welcome-text {
+  color: white;
   position: absolute;
   top: 10%;
-  color: white;
 }
 
 .login-register-form label {
@@ -365,11 +463,10 @@ button {
 }
 
 .login-register-form button {
-  margin-top: 2rem;
-  padding: 0.7rem 2.5rem;
   font-size: 1.2rem;
   font-weight: 500;
+  margin-top: 2rem;
+  padding: 0.7rem 2.5rem;
 }
-
 
 /* END OF LOGIN-REGISTER PAGES */

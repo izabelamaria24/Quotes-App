@@ -15,6 +15,8 @@ const Main = () => {
     fetchData(data, setData)
   }, [])
 
+  console.log(data.user.username)
+
   return <>
     <Navbar userId={data.user._id} />
     <button onClick={openAddQuoteForm} className="add-quote">
@@ -27,12 +29,12 @@ const Main = () => {
           quote.author.toLowerCase().includes(search.toLowerCase()) ||
           quote.username.toLowerCase().includes(search.toLowerCase())
         }).map((quote, id) => {
-          return <article className="quote-container" key={id}>
+          return <blockquote className="quote-container" key={id}>
             <img className="quote-img" src={speech}></img>
             <div className="quote-content">{quote.content}</div>
             <div className="quote-author">- {quote.author ? quote.author : "John Doe"}</div>
-            <div className="quote-user"> @{quote.username}</div>
-          </article>
+            <div className="quote-user">@{quote.username}</div>
+          </blockquote>
         })}
     </section>
   </>
