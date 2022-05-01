@@ -178,7 +178,7 @@ button {
 
 /* ADD QUOTE FORM MODAL */
 
-.add-quote-form-wrapper {
+.modal-wrapper {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   height: 100%;
@@ -470,3 +470,57 @@ button {
 }
 
 /* END OF LOGIN-REGISTER PAGES */
+
+/* PROFILE PAGE */
+
+.profile-section {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.profile-section .profile-img img {
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.profile-user-info button {
+  background-color: var(--blaze-orange);
+  margin-top: 2rem;
+  padding: 0.8rem 0;
+  transition: 0.3s linear;
+  width: 200px;
+}
+
+/* LOG OUT AND DELETE ACCOUNT MODALS */
+
+.modal-container {
+  background-color: white;
+  height: 30%;
+  width: 30%;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: relative;
+}
+
+.modal-close-btn {
+  background-color: transparent;
+  border: none;
+  left: 1rem;
+  position: absolute;
+  top: 1.5rem;
+}
+
+.modal-close-btn:hover {
+  opacity: 0.8;
+}
+
+.modal-close-btn i {
+  font-size: 1.3rem;
+  color: gray;
+}
+
+/* END OF LOG OUT AND DELETE ACCOUNT MODALS */
+
+/* END OF PROFILE PAGE */

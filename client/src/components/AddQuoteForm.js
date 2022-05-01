@@ -18,7 +18,7 @@ const AddQuoteForm = () => {
   }
 
   return <>
-    <section className={`${isAddQuoteFormOpen ? "show flex-center add-quote-form-wrapper" : "add-quote-form-wrapper"}`}>
+    <section className={`${isAddQuoteFormOpen ? "show flex-center modal-wrapper" : " modal-wrapper"}`}>
       <section className="add-quote-form-container">
         <button onClick={closeAddQuoteForm} className="close-add-quote-form"><i className="fas fa-solid fa-arrow-left"></i></button>
         <section className="left flex-center flex-column full-w-h">  <blockquote className="quote-container">

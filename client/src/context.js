@@ -6,6 +6,8 @@ const AppContext = React.createContext()
 export const AppProvider = ({ children }) => {
   const initialState = {
     isAddQuoteFormOpen: false,
+    isLogOutModalOpen: false,
+    isDeleteAccountModalOpen: false,
     search: ''
   }
 
@@ -19,12 +21,20 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: "CLOSE_ADD_QUOTE_FORM" })
   }
 
-  const getCurrentUser = (user) => {
-    dispatch({ type: 'GET_CURRENT_USER', payload: user})
+  const openLogOutModal = () => {
+    dispatch({ type: "OPEN_LOG_OUT_MODAL" })
   }
 
-  const fetchQuotes = (quotes) => {
-    dispatch({ type: 'FETCH_QUOTES', payload: quotes })
+  const closeLogOutModal = () => {
+    dispatch({ type: "CLOSE_LOG_OUT_MODAL" })
+  }
+
+  const openDeleteAccountModal = () => {
+    dispatch({ type: "OPEN_DELETE_ACCOUNT_MODAL" })
+  }
+
+  const closeDeleteAccountModal = () => {
+    dispatch({ type: "CLOSE_DELETE_ACCOUNT_MODAL" })
   }
 
   const setSearch = (e) => {
@@ -37,7 +47,10 @@ export const AppProvider = ({ children }) => {
         state,
         openAddQuoteForm,
         closeAddQuoteForm,
-        getCurrentUser,
+        openLogOutModal,
+        closeLogOutModal,
+        openDeleteAccountModal,
+        closeDeleteAccountModal,
         setSearch
       }}
     >

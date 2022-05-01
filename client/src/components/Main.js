@@ -15,8 +15,6 @@ const Main = () => {
     fetchData(data, setData)
   }, [])
 
-  console.log(data.user.username)
-
   return <>
     <Navbar userId={data.user._id} />
     <button onClick={openAddQuoteForm} className="add-quote">

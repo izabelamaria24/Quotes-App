@@ -8,6 +8,9 @@ import Register from './Register'
 import Profile from './Profile'
 import AddQuoteForm from './AddQuoteForm'
 import FirstPage from './FirstPage'
+import MyQuotes from './MyQuotes'
+import DeleteAccount from './DeleteAccount'
+import LogOut from './LogOut'
 
 const App = () => {
   return <>
@@ -16,9 +19,12 @@ const App = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile/:id" element={<Profile />} />
+      <Route path="/profile/:id/my-quotes" element={<MyQuotes />}/>
       <Route path="/firstpage" element={<FirstPage/>} />
     </Routes>
     <AddQuoteForm />
+    <DeleteAccount />
+    <LogOut />
   </>
 }
 

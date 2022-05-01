@@ -74,20 +74,6 @@ export const fetchData = async (data, setData) =>
 	}
 }
 
-export const changeProfilePicture = (profilePicture) =>
-{
-	axios(
-	{
-		method: "PUT",
-		data:
-		{
-			profilePicture: profilePicture
-		},
-		withCredentials: true,
-		url: 'http://localhost:5000/currentUser'
-	}).then((res) => console.log(res))
-}
-
 export const postQuote = (quoteContent) => {
 	const { content, author, username } = quoteContent
 	axios({
